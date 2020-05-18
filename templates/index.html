@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>勤工助学管理系统</title>
+	{#  注意引入文件的方式  #}
+	{% load staticfiles %}
+	<link rel="stylesheet" href="../static/layui/css/layui.css" media="all">
+	{#  设置网页标题图标  #}
+	<link rel="icon" type="image/x-icon" href="../static/media/icon.ico" />
+</head>
+<body>
+	<div class="layui-header" style="background-color:#2F4056;height: 80px;width: 100%;" id="header">
+		<div style="width: 70%;height: 100%;margin-right: 40px;float: left;">
+			<a href="/index">
+				<!-- <img src="../static/media/swjtu-logo.png" alt=""> -->
+			</a>
+		</div>
+		<div style="width: 190px;height: 100%;float: right;margin-right: 30px;margin-top: 10px;" class="layui-tab layui-tab-brief" lay-filter="tab">
+			<ul class="layui-tab-title">
+			    <li style="color: antiquewhite;" name="tab" id="login">登陆</li>
+			    <li style="color: antiquewhite;" name="tab" id="register">注册</li>
+				<!-- <div class="layui-tab-content"></div> -->
+			</ul>
+		</div>
+	</div>
+	<div class="layui-carousel" id="id1" style="margin: 20px 10%;text-align: center;">
+	    <div carousel-item>
+			<img src="../static/media/1.jpg">
+			<img src="../static/media/2.jpg">
+			<img src="../static/media/3.jpg">
+			<img src="../static/media/4.jpg">
+			<img src="../static/media/5.jpg">
+	    </div>
+	</div>
+	<div id="content" style="margin: 20px 10%;height: 200px;">
+		<div style="width: 45%;margin-right: 10%;float: left;">
+			<h2 style="width: 85%;float: left;margin-bottom: 10px;">公告/岗位信息</h2>
+			<div style="margin-top: 10px;">
+				<i class="layui-icon layui-icon-next" style="font-size: small;">查看更多</i>
+			</div>
+			<hr class="layui-bg-cyan">
+			<!-- 公告/岗位信息显示 -->
+			<div id="station_info">
+				暂无信息
+			</div>
+		</div>
+		<div style="width: 45%;float: right;">
+			<h2 style="width: 85%;float: left;margin-bottom: 10px;">部门信息</h2>
+			<div style="margin-top: 10px;">
+				<i class="layui-icon layui-icon-next" style="font-size: small;">查看更多</i>
+			</div>
+			<hr class="layui-bg-cyan">
+			<!-- 部门信息显示 -->
+			<div id="department_info">
+				暂无信息
+			</div>
+		</div>
+	</div>
+	<div class="layui-footer" style="background-color:#2F4056;height: 80px;width: 100%;float: left;" id="footer">
+		<div style="width: 40%;float: left;">
+			<img src="" alt="">
+		</div>
+		<div style="width:20% ;float: left;text-align: center;margin-top: 30px;">
+			<p style="color: whitesmoke;">管理系统||勤工俭学</p>
+		</div>
+		<div style="width: 40%;float: left;text-align: center;margin-top: 20px;">
+			<a href="https://www.swjtu.edu.cn/"><p style="color: whitesmoke;">地址：西南交通大学</p></a>
+			<p style="color: whitesmoke;">联系qq：1391186209</p>
+		</div>
+	</div>
+<!-- 条目中可以是任意内容，如：<img src=""> -->
+<script type="text/javascript" src="../static/layui/layui.js"></script>
+<script>
+	console.log("页面宽度：  "+document.body.clientWidth);
+	layui.use(['carousel','element','jquery','layer'], function(){
+		var carousel = layui.carousel
+		,element = layui.element
+		,$ = layui.jquery
+		,layer = layui.layer
+		  //建造实例
+		carousel.render({
+		  elem: '#id1'
+		  ,width: '80%' //设置容器宽度
+		  ,height: '350px'
+		  ,arrow: 'always' //始终显示箭头
+		  ,indicator: 'outside' //指示器位置
+		  //,anim: 'updown' //切换动画方式
+		});
+		element.on('tab(tab)', function(data){
+			console.log("jquery  点击");
+		    $("[name='tab']").removeAttr("style");
+		  });
+		$('#login').click(function(){
+			layer.msg("login   ");
+			window.location.href="/login"
+		})
+		$('#register').click(function(){
+			layer.msg("register   ");
+			window.location.href="/register"
+		})
+	});
+	
+</script>
+</body>
+</html>

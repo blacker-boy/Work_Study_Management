@@ -1,0 +1,76 @@
+{% extends "admin/base.html" %}
+{% block title %}学生管理{% endblock %}
+{% block content %}
+    <div class="" style="margin-left: 40px;margin-right: 40px;">
+       <!-- <blockquote class="layui-elem-quote" style="margin-top: 20px;">
+            <h1>CRUD——Django + LayUI</h1>
+        </blockquote> -->
+        {# 查询学生模块 #}
+        <form action="/admin/search" method="get" style="margin-top: 30px;">
+            <input placeholder="学生学号" name="st_id" id="st_id">
+            <input type="submit" class="layui-btn" value="搜索">
+        </form>
+
+        {# 显示所有学生模块 #}
+        <table class="layui-table">
+      
+      <thead>
+        <tr>
+            <th>学号</th>
+            <th>姓名</th>
+            <th>专业班级</th>
+            <th>电话</th>
+            <th>QQ号</th>
+            <th>部门</th>
+            <th>职务</th>
+            <th>辅导员</th>
+            <th>操作</th>
+        </tr>
+      </thead>
+      <tbody>
+        {%for student in data%}
+            <tr>
+                <td>{{student.user_id}}</td>
+                <td>{{student.user_name}}</td>
+                <td>{{student.user_specialty}}</td>
+                <td>{{ student.user_phone.phone_id }}</td>
+                <td>{{ student.user_qq }}</td>
+                <td>{{ student.department.de_name }}</td>
+                {% if student.user_phone.user_level == 1 %}
+                    <td>学院管理员</td>
+                    {% elif student.user_phone.user_level == 2 %}
+                    <td>管理员</td>
+                    {% elif student.user_phone.user_level == 3 %}
+                    <td>组长</td>
+                    {% elif student.user_phone.user_level == 4 %}
+                    <td>成员</td>
+                {% endif %}
+                <td>{{ student.user_instructor }}</td>
+                <td>
+                    <div class="layui-btn-group">
+                        <a href="/admin/get/{{ student.user_id }}" class="layui-btn"><i class="layui-icon">&#xe642;</i>编辑</a>
+                        <a href="/admin/delete/{{ student.user_id }}" class="layui-btn layui-btn-warm"><i class="layui-icon">&#xe640;</i>删除</a>
+                    </div>
+                    {# 修改学生模块 #}
+{#                    <a href="/get/{{ student.user_id }}" class="layui-btn layui-btn-normal">#}
+{#                        <i class="layui-icon">&#xe642;</i>修改#}
+{#                    </a>#}
+                </td>
+{#                <td>#}
+                    {# 删除学生模块 #}
+{#                    <a href="/delete/{{ student.user_id }}" class="layui-btn layui-btn-danger">#}
+{#                        <i class="layui-icon">&#xe640;</i>删除#}
+{#                    </a>#}
+{#                </td>#}
+            </tr>
+        {%endfor%}
+      </tbody>
+        </table>
+
+        {# 添加学生模块 #}
+        <a href="/addPage" class="layui-btn">
+            <i class="layui-icon">&#xe654;</i> 添加
+        </a>
+         <button type="button" class="layui-btn" id="test3"><i class="layui-icon"></i>上传文件</button>
+    </div>
+{% endblock %}

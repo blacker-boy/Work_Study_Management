@@ -1,0 +1,576 @@
+{% extends "student/base.html" %}
+{% block title %}岗位申请{% endblock %}
+{% block content %}
+    <div class="" style="margin-left: 40px;margin-right: 40px;">
+		<fieldset class="layui-elem-field layui-field-title" style="margin-top: 10px;">
+		  <legend>岗位申请</legend>
+		</fieldset>
+		<!-- <button id="div">提交</button> -->
+		<div style="padding: 20px; background-color: #F2F2F2;margin-top: 20px;">
+		  <div class="layui-row layui-col-space15">
+			<div class="layui-col-md12">
+			  <div class="layui-card">
+				<div class="layui-card-header">
+						<i class="layui-icon" style="float: left;">&#xe602;</i>岗位申请
+				</div>
+				<div class="layui-card-body" style="margin-top: px;">
+				<center>
+
+					<p><b>
+					<font size=4>信息科学与技术学院学生勤工助学申请表</font>
+					</b></p>
+
+					<p>
+					<font size=2 style="margin-left: 45%;">填表日期：</font>
+					</p>
+
+					<table width="857" height="1139" border="1">
+					<!--  <tr>
+						<th height="43" colspan="7" scope="col">
+						<span class="k"><b><font size=5>基 本 信 息</font></b></span>
+						</th>
+					  </tr>
+					  -->
+					  <!-- <tr>
+						<th width="135" height="32" scope="row"><span class="k">接受入党申请的支部名称</span></th>
+						<td colspan="6">&nbsp;</td>
+					  </tr>
+					  -->
+					  <tr>
+						<th height="36" scope="row"><span class="k">姓名</span></th>
+						<td width="119">&nbsp;</td>
+						<td width="121"><span class="k">性别</span></td>
+						<td width="112">&nbsp;</td>
+						<td width="92"><span class="k">出生年月</span></td>
+						<td width="101">&nbsp;</td>
+						<td width="131" rowspan="4">&nbsp;</td>
+					  </tr>
+					  
+					  <tr>
+						<th height="36" scope="row"><span class="k">学号</span></th>
+						<td width="119">&nbsp;</td>
+						<td width="121"><span class="k">民族</span></td>
+						<td width="112">&nbsp;</td>
+						<td width="92"><span class="k">政治面貌</span></td>
+						<td width="101">&nbsp;</td>
+					  </tr>
+					  <tr>
+						<th height="30" scope="row"><span class="k">学院</span></th>
+						<td>&nbsp;</td>
+						<td><span class="k">专业班级</span></td>
+						<td colspan="3">&nbsp;</td>
+					  </tr>
+					  
+<!-- 					  <tr>
+						<th height="29" scope="row"><span class="k">籍贯</span></th>
+						<td>&nbsp;</td>
+						<td><span class="k">健康状况</span></td>
+						<td colspan="3">&nbsp;</td>
+					  </tr>
+					  -->
+					  <tr>
+						<th height="32" scope="row"><span class="k">校内住址</span></th>
+						<td colspan="5">&nbsp;</td>
+					  </tr>
+					  
+					  <tr>
+						<th height="31" scope="row"><span class="k">联系方式</span></th>
+						<td colspan="6">&nbsp;</td>
+					  </tr>
+					  
+					  <tr>
+						<th height="31" scope="row"><span class="k">家庭住址</span></th>
+						<td colspan="4">&nbsp;</td>
+						<td><span class="k">邮政编码</span></td>
+						<td >&nbsp;</td>
+					  </tr>
+					  
+					  
+					  <tr>
+						<th height="33" scope="row"><span class="k">工商银行卡号</span></th>
+						<td colspan="6">&nbsp;</td>
+					  </tr>
+					  
+					  <tr>
+						<th height="30" scope="row"><span class="k">本人家庭经济情况认定结果</span></th>
+						<td colspan="6">&nbsp;</td>
+					  </tr>
+					  
+					  <tr>
+						<th rowspan="2" scope="row"><span class="k">申请岗位</span></th>
+						<td height="32" colspan="6"><span class="k">&nbsp;</span></td>
+						<!-- <td colspan="6">&nbsp;</td> -->
+						<!-- <td><span class="k">手机号码</span></td>
+						<td colspan="3">&nbsp;</td> -->
+					  </tr>
+					  
+					  <tr>
+						<td height="32" colspan="6"><span class="k">&nbsp;</span></td>
+						<!-- <td>&nbsp;</td>
+						<td><span class="k">职称名称 </span></td>
+						<td colspan="4">&nbsp;</td> -->
+					  </tr>
+					  
+					  <tr>
+						<th height="32" scope="row"><span class="k">是否服从调剂</span></th>
+						<td colspan="6">&nbsp;</td>
+					  </tr>
+					  
+					  <tr>
+						<th height="32" scope="row"><span class="k">是否愿意去学校其他部门</span></th>
+						<td colspan="6">&nbsp;</td>
+					  </tr>
+					  
+					  <tr>
+						<th height="32" scope="row"><span class="k">是否挂科</span></th>
+						<td colspan="6">&nbsp;</td>
+					  </tr>
+					  
+<!-- 					  <tr>
+						<th height="29" scope="row"><span class="k">家庭住址</span></th>
+						<td>&nbsp;</td>
+						<td><span class="k">邮编</span></td>
+						<td colspan="4">&nbsp;</td>
+					  </tr>
+					  
+					  <tr>
+						<th height="29" scope="row"><span class="k">户口所在地</span></th>
+						<td>&nbsp;</td>
+						<td><span class="k">邮编</span></td>
+						<td colspan="4">&nbsp;</td>
+					  </tr>
+					  
+					  <tr>
+						<th rowspan="3" scope="row"><span class="k">联系方式</span></th>
+						<td height="32"><span class="k">住宅电话</span></td>
+						<td>&nbsp;</td>
+						<td><span class="k">手机号码</span></td>
+						<td colspan="3">&nbsp;</td>
+					  </tr>
+					  -->
+					  <!-- <tr>
+						<td height="30"><span class="k">办公电话</span></td>
+						<td>&nbsp;</td>
+						<td><span class="k">传真</span></td>
+						<td colspan="3">&nbsp;</td>
+					  </tr>
+					  
+					  <tr>
+						<td height="26"><span class="k">E-mail</span></td>
+						<td colspan="5">&nbsp;</td>
+					  </tr> -->
+					  
+					  <tr>
+						<th height="124" scope="row"><span class="k">在校表现</span></th>
+						<td colspan="6">&nbsp;</td>
+					  </tr>
+					  
+					  <tr>
+						<th height="124" scope="row"><span class="k">申请理由</span></th>
+						<td colspan="6">&nbsp;</td>
+					  </tr>
+					  
+					  <!-- <tr>
+						<th height="48" colspan="7" scope="row"><span class="k"><font size=5>申请入党信息</font></span></th>
+					  </tr>
+					  
+					  <tr>
+						<th height="30" scope="row"><span class="k">申请入党时间</span></th>
+						<td colspan="6">&nbsp;</td>
+					  </tr>
+					  
+					  <tr>
+						<th rowspan="2" scope="row"><span class="k">具备入党条件的成熟度</span></th>
+						<td rowspan="2">&nbsp;</td>
+						<td height="42"><span class="k">列为积极分子的 时间</span></td>
+						<td colspan="4">&nbsp;</td>
+					  </tr>
+					  
+					  <tr>
+						<td height="42"><span class="k">列为发展对象的时间</span></td>
+						<td colspan="4">&nbsp;</td>
+					  </tr>
+					  
+					  <tr>
+						<th height="31" scope="row"><span class="k">入党联系人姓名</span></th>
+						<td><span class="k">1.</span></td>
+						<td colspan="5">2.</td>
+					  </tr>
+					  
+					  <tr>
+						<th height="28" scope="row"><span class="k">入党介绍人姓名</span></th>
+						<td><span class="k">1.</span></td>
+						<td colspan="5">2.</td>
+					  </tr>
+					  
+					  <tr>
+						<th height="43" scope="row"><span class="k">备注</span></th>
+						<td colspan="6">&nbsp;</td>
+					  </tr>
+					  
+					  <tr>
+						<th height="54" colspan="7" scope="row"><span class="k"><font size=5>党内知识培训信息</font></span></th>
+					  </tr>
+					  -->
+					  <tr>
+						<th rowspan="7" height="38" scope="row"><span class="k">本学期课程安排（打√）</span></th>
+
+						<td><span class="k"></span></td>
+						<td><span class="k">星期一</span></td>
+						<td><span class="k">星期二</span></td>
+						<td><span class="k">星期三</span></td>
+						<td><span class="k">星期四</span></td>
+						<td><span class="k"> 星期五</span></td>
+						<!-- <td><span class="k"> 星期六</span></td>
+						<td><span class="k"> 星期日</span></td> -->
+					  </tr>
+					  
+					  <tr>
+					    <td>第一讲</td>
+					    <td id="11">11</td>
+					    <td id="21">21</td>
+					    <td id="31">31</td>
+					    <td id="41">41</td>
+					    <td id="51">51</td>
+						<!-- <td id="61"></td>
+						<td id="71"></td> -->
+					  </tr>
+					  <tr>
+					    <td>第二讲</td>
+					    <td id="12">12</td>
+					    <td id="22">22</td>
+					    <td id="32">32</td>
+					    <td id="42">42</td>
+					    <td id="52">52</td>
+						<!-- <td id="62"></td>
+						<td id="72"></td> -->
+					  </tr>
+					  <tr>
+					    <td>第三讲</td>
+					    <td id="13">13</td>
+					    <td id="23">23</td>
+					    <td id="33">33</td>
+					    <td id="43">43</td>
+					    <td id="53">53</td>
+						<!-- <td id="63"></td>
+						<td id="73"></td> -->
+					  </tr>
+					  <tr>
+					    <td>第四讲</td>
+					    <td id="14">14</td>
+					    <td id="24">24</td>
+					    <td id="34">34</td>
+					    <td id="44">44</td>
+					    <td id="54">54</td>
+						<!-- <td id="64"></td>
+						<td id="74"></td> -->
+					  </tr>
+					  <tr>
+					    <td>第五讲</td>
+					    <td id="15">15</td>
+					    <td id="25">25</td>
+					    <td id="35">35</td>
+					    <td id="45">45</td>
+					    <td id="55">55</td>
+						<!-- <td id="65"></td>
+						<td id="75"></td> -->
+					  </tr>
+					  <tr>
+					    <td>第六讲</td>
+					    <td id="16">16</td>
+					    <td id="26">26</td>
+					    <td id="36">36</td>
+					    <td id="46">46</td>
+					    <td id="56">56</td>
+						<!-- <td id="66"></td>
+						<td id="76"></td> -->
+					  </tr>
+					  
+					  <tr>
+						<th height="124" scope="row"><span class="k">辅导员意见</span></th>
+						<td colspan="2">&nbsp;</td>
+						<th height="124" scope="row"><span class="k">院系意见</span></th>
+						<td colspan="3">&nbsp;</td>
+					  </tr>
+					</table>
+					</center>
+					<button class="layui-btn" style="float: ;margin-left: 90%;">提交申请</button>
+			  </div>
+			</div>
+		  </div>
+		</div> 
+	</div>
+	<div style="padding: 20px; background-color: #F2F2F2;">
+	  <div class="layui-row layui-col-space15">
+		<div class="layui-col-md12">
+		  <div class="layui-card">
+			<div class="layui-card-header">
+				<div class="layui-form">
+					<div class="layui-inline" style="margin-right: 15px;">
+						申请进度：
+					</div>
+				
+					<i class="layui-icon" style="float: left;">&#xe602;</i>
+			</div>
+			</div>
+			<div class="layui-card-body" style="margin-top: px;">
+			  <table class="layui-table" lay-even="" lay-skin="line">
+				<colgroup>
+				  <col width="50">
+				  <col width="150">
+				  <col width="100">
+				  <col width="100">
+				  <col width="50">
+				  <col width="80">
+				  <col width="100">
+				  <col>
+				</colgroup>
+				<thead>
+				  <tr>
+					<th>序号</th>
+					<th>申请部门</th>
+					<th>申请岗位</th>
+					<th>申请时间</th>
+					<th>状态</th>
+					<th>操作</th>
+				  </tr> 
+				</thead>
+				<tbody>
+				  <tr>
+					<td>1</td>
+					<td>学院机房</td>
+					<td>机房助理</td>
+					<td>2020-4-10</td>
+					<td>待审核</td>
+					<td>
+						<div id="" class="layui-btn-group">
+							<button type="button" class="layui-btn layui-btn-xs">查看</button>
+							<button type="button" class="layui-btn layui-btn-xs layui-btn-warm">修改</button>
+							<button type="button" class="layui-btn layui-btn-xs layui-btn-danger">撤销</button>
+						</div>
+					</td>
+				  </tr>
+				  <tr>
+					<td>2</td>
+					<td>事务中心</td>
+					<td>事务中心助理</td>
+					<td>2020-4-10</td>
+					<td>待审核</td>
+					<td>
+						<div id="" class="layui-btn-group">
+							<button type="button" class="layui-btn layui-btn-xs">查看</button>
+							<button type="button" class="layui-btn layui-btn-xs layui-btn-warm">修改</button>
+							<button type="button" class="layui-btn layui-btn-xs layui-btn-danger">撤销</button>
+						</div>
+					</td>
+				  </tr>
+				  
+				</tbody>
+			  </table>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	</div> 
+
+	
+{% endblock %}
+{% block js_content %}
+layui.use(['element', 'layer','upload','layedit', 'laydate','table','form'], function(){
+	 var $ = layui.jquery
+	 ,element = layui.element; //Tab的切换功能，切换事件监听等，需要依赖element模块
+	 var layer = layui.layer;
+	 var upload = layui.upload;
+	 var layedit = layui.layedit;
+	 var laydate = layui.laydate;
+	 var table = layui.table;
+	 var form = layui.form;
+	 form.render("select","select");
+	   laydate.render({
+		 elem: '#start_date'
+		 ,type: 'datetime'
+		 ,theme: '#393D49'
+	   });
+	   laydate.render({
+		 elem: '#end_date'
+		 ,type: 'datetime'
+		 ,theme: '#393D49'
+	   });
+	   //监听折叠
+	   element.on('collapse(test)', function(data){
+		 <!-- layer.msg('展开状态：'+ data.show); -->
+	   });
+	    //多文件列表示例
+	   var demoListView = $('#demoList')
+		   , uploadListIns = upload.render({
+		   elem: '#testList'
+		   , method: 'POST'
+		   , accept: 'file'
+		   , multiple: true
+		   , auto: false
+		   , choose: function (obj) {
+
+			   files = this.files = obj.pushFile(); //将每次选择的文件追加到文件队列
+			   //读取本地文件
+			   obj.preview(function (index, file, result) {
+				   var tr = $(['<tr id="upload-' + index + '">'
+					   , '<td></td>'
+					   , '<td>' + file.name + '</td>'
+					   , '<td>' + (file.size / 1014).toFixed(1) + 'kb</td>'
+					   , '<td>' + $("select[name='resource_type']").val() + '</td>'
+					   , '<td>' + $("select[name='authority']").val() + '</td>'
+					   , '<td>等待上传</td>'
+					   , '<td>'
+					   , '<button class="layui-btn layui-btn-xs demo-reload ">重传</button>'
+					   , '<button class="layui-btn layui-btn-xs layui-btn-danger demo-delete">删除</button>'
+					   , '</td>'
+					   , '</tr>'].join(''));
+
+				   //单个重传
+				   tr.find('.demo-reload').on('click', function () {
+					   obj.upload(index, file);
+				   });
+
+				   //删除
+				   tr.find('.demo-delete').on('click', function () {
+					   delete files[index]; //删除对应的文件
+					   tr.remove();
+					   uploadListIns.config.elem.next()[0].value = ''; //清空 input file 值，以免删除后出现同名文件不可选
+				   });
+
+				   demoListView.append(tr);
+				   var oTable = document.getElementById("demoList");  //设置自增序号
+				   		    for(var i=0;i<oTable.rows.length;i++){
+				   		    oTable.rows[i].cells[0].innerHTML = (i+1);
+							}
+				   getFileNames();//得到文件名
+			   });
+		   }
+		   , done: function (res, index, upload) {
+			   if (res.code == 0) { //上传成功
+				   var tr = demoListView.find('tr#upload-' + index)
+					   , tds = tr.children();
+				   tds.eq(2).html('<span style="color: #5FB878;">上传成功</span>');
+				   tds.eq(3).html(''); //清空操作
+				   return delete this.files[index]; //删除文件队列已经上传成功的文件
+			   }
+			   this.error(index, upload);
+		   }
+		   , error: function (index, upload) {
+			   var tr = demoListView.find('tr#upload-' + index)
+				   , tds = tr.children();
+			   tds.eq(2).html('<span style="color: #FF5722;">上传失败</span>');
+			   tds.eq(3).find('.demo-reload').removeClass('layui-hide'); //显示重传
+		   }
+	   });
+	   function getFileNames() {
+			   var count = 0;
+			   form = new FormData();
+			   // form.append("file", files[0]);
+			   // 将文件列表加入FormData()中
+			   for (let i in files) {
+				   form.append("file" + count, files[i]);
+				   console.log("--------" + i + "---->" + files[i]);
+				   count = count + 1;
+			   }
+			   // 获得上传的文件总数
+			   form.append("files_count", count);
+			   // 获得上传的文件类型
+			   form.append("resource_type", $("select[name='resource_type']").val());
+		
+		
+		   }
+	   upload.render({
+		elem: '#upload'
+		,url: '/admin/import_freetime/' //改成您自己的上传接口
+		,accept: 'file' //普通文件
+		,exts: 'xlsx|xls' //只允许上传excel文件
+		,done: function(res){
+			layer.msg(res.msg);
+			var table_name = res.data.table_name;
+			var table_content = res.data.table_content;
+			console.log(table_content.day1[0]);
+			$("#table_name").val(table_name);
+			for(var i=1;i<6;i++){
+				var data_day = {};
+				for(var j=1;j<7;j++){
+					var day_id = "day"+i;
+					var td_content = table_content[day_id][j-1];
+					$("#"+i+j).html(td_content);
+					console.log("import_freetime td_content---"+td_content);
+				}
+			}
+			console.log("upload  "+JSON.stringify(res));
+		}
+	   });
+	   $("#11,#12,#13,#14,#15,#16,#21,#22,#23,#24,#25,#26,#31,#32,#33,#34,#35,#36,#41,#42,#43,#44,#45,#46,#51,#52,#53,#54,#55,#56").click(function(){
+		   id = this.id;
+		   $("#alert_content").val($("#"+id).html());
+		   layer.open({
+			type:1,
+			area:['600px','300px'],
+			 title: '输入框'
+			 ,content: $("#alert_model"),
+			 shade: 0,
+			 btn: ['提交', '重置']
+			 ,btn1: function(index, layero){
+			 var content=$("#alert_content").val();
+			 console.log(content);
+			 $("#"+id).html(content);
+			 layer.closeAll();
+			 },
+			 btn2: function(index, layero){
+			  $("#alert_content").val("");
+			  return false;
+			 },
+		   cancel: function(layero,index){ 
+			  layer.closeAll();
+			 }
+		   }); 
+		});
+		$("#batch_add_freetime").click(function(){
+			var ft_content = {};
+			var data_week = [];
+			for(var i=1;i<6;i++){
+				var data_day = {};
+				for(var j=1;j<7;j++){
+					var data = $("#"+i+j).html();
+					data_day[""+i+j] = data;
+				}
+				data_week.push(data_day);
+			}
+			if($("#table_name").val() == ""){
+				layer.msg("请输入表名");
+				return false;
+			}
+			ft_content["table_name"] = $("#table_name").val();
+			ft_content["data_week"] = data_week;
+			console.log("batch_add_freetime ft_content---"+JSON.stringify(ft_content));
+			$.ajax({
+				url : "/admin/batch_add_freetime/",    //请求地址
+				type : "POST",
+				'Content-Type':'application/json',    //数据，json字符串
+				headers:{'X-CSRFToken': $('input[name=csrfmiddlewaretoken]').val()},//在请求头通过csrf认证，键固定    
+				data : {
+					ft_content:JSON.stringify(ft_content)
+				},    
+				success : function(res) {    //请求成功
+					layer.msg(JSON.parse(res).msg);
+					var data = JSON.parse(res).data;
+					for(var i=1;i<6;i++){
+						for(var j=1;j<7;j++){
+							var day_data = data[i-1][""+i+j]
+							$("#"+i+j).html(day_data);
+						}
+					}
+					console.log("batch_add_freetime  result----"+data[0]["11"]);
+				},
+				error : function(e){    //请求失败，包含具体的错误信息
+					console.log(e.status);
+					console.log(e.responseText);
+				}
+			});
+		})
+})
+{% endblock %}
+

@@ -1,0 +1,403 @@
+{% extends "admin/base.html" %}
+{% block title %}资源上传{% endblock %}
+{% block content %}
+    <div class="" style="margin-left: 40px;margin-right: 40px;">
+		<fieldset class="layui-elem-field layui-field-title" style="margin-top: 10px;">
+		  <legend>资源上传</legend>
+		</fieldset>
+		<!-- <button id="div">提交</button> -->
+		<div style="padding: 20px; background-color: #F2F2F2;margin-top: 20px;">
+		  <div class="layui-row layui-col-space15">
+			<div class="layui-col-md12">
+			  <div class="layui-card">
+				<div class="layui-card-header">
+						<i class="layui-icon" style="float: left;">&#xe602;</i>上传文档
+				</div>
+				<div class="layui-card-body" style="margin-top: px;">
+					<div class="layui-form">
+					<div class="layui-form-item" style="margin-top: 10px; margin-right: 20px;">
+											
+					<div class="layui-form-item" style="margin-top: 20px;">
+						<label class="layui-form-label">所属类型</label>
+					      <div class="layui-input-inline">
+					        <select name="resource_type" lay-verify="required" lay-filter="select" lay-search="">
+					          <option value="值班制度">值班制度</option>
+					          <option value="学习资源">学习资源</option>
+					          <option value="故障排除">故障排除</option>
+					          <option value="安全条例">安全条例</option>
+							  <option value="其他">其他</option>
+					        </select>
+						</div>
+						<label class="layui-form-mid" style="margin-left: 25px;">设置权限</label>
+						<div class="layui-input-inline">
+						    <select name="authority" lay-verify="required" lay-filter="select" lay-search="">
+						      <option value="仅部门">仅部门</option>
+						      <option value="公共">公共</option>
+						    </select>
+						</div>
+						<button type="button" class="layui-btn" id="testList" style="margin-left: 30px;">选择文件</button>
+						<div class="layui-inline" style="color: firebrick;margin-left: 10px;">可选择多个同时上传</div>
+					</div>
+					    <div class="layui-upload">
+					        
+					        <div class="layui-upload-list">
+					            <table class="layui-table">
+					                <thead>
+					                <tr>
+										<th>序号</th>
+					                    <th>文件名</th>
+					                    <th>大小</th>
+										<th>所属类型</th>
+										<th>权限</th>
+					                    <th>状态</th>
+					                    <th>操作</th>
+					                </tr>
+					                </thead>
+					                <tbody id="demoList"></tbody>
+					            </table>
+					        </div>
+					        <button type="button" class="layui-btn" id="testListAction">开始上传</button>
+					    </div>
+					</div>
+
+				</div>
+			  </div>
+			</div>
+		  </div>
+		</div> 
+	</div>
+	<div style="padding: 20px; background-color: #F2F2F2;">
+	  <div class="layui-row layui-col-space15">
+		<div class="layui-col-md12">
+		  <div class="layui-card">
+			<div class="layui-card-header">
+				<div class="layui-form">
+					<div class="layui-inline" style="margin-right: 15px;">
+						全部资源：
+					</div>
+					<div class="layui-input-inline" style="margin-left: 40px;">
+					  <select name="" lay-verify="required" lay-filter="select" lay-search="">
+					    <option value="0">值班制度</option>
+					    <option value="1">学习资源</option>
+					    <option value="2">故障排除</option>
+					    <option value="3">安全条例</option>
+						<option value="4">其他</option>
+					  </select>
+					
+					</div>
+					<i class="layui-icon" style="float: left;">&#xe602;</i>
+			</div>
+			</div>
+			<div class="layui-card-body" style="margin-top: px;">
+			  <table class="layui-table" lay-even="" lay-skin="line">
+				<colgroup>
+				  <col width="50">
+				  <col width="150">
+				  <col width="100">
+				  <col width="100">
+				  <col width="50">
+				  <col width="80">
+				  <col width="100">
+				  <col>
+				</colgroup>
+				<thead>
+				  <tr>
+					<th>序号</th>
+					<th>文件名</th>
+					<th>类型</th>
+					<th>上传时间</th>
+					<th>上传者</th>
+					<th>下载数</th>
+					<th>操作</th>
+				  </tr> 
+				</thead>
+				<tbody>
+				  <tr>
+					<td>1</td>
+					<td>资源.docx</td>
+					<td>安全条例</td>
+					<td>2020-4-10</td>
+					<td>魏强</td>
+					<td>0</td>
+					<td>
+						<div id="" class="layui-btn-group">
+							<button type="button" class="layui-btn layui-btn-xs">查看</button>
+							<button type="button" class="layui-btn layui-btn-xs layui-btn-warm">修改</button>
+							<button type="button" class="layui-btn layui-btn-xs layui-btn-normal">下载</button>
+							<button type="button" class="layui-btn layui-btn-xs layui-btn-danger">删除</button>
+						</div>
+					</td>
+				  </tr>
+				  <tr>
+					<td>2</td>
+					<td>1.xlsx</td>
+					<td>学习资源</td>
+					<td>2020-4-10</td>
+					<td>魏强</td>
+					<td>1</td>
+					<td>
+						<div id="" class="layui-btn-group">
+							<button type="button" class="layui-btn layui-btn-xs">查看</button>
+							<button type="button" class="layui-btn layui-btn-xs layui-btn-warm">修改</button>
+							<button type="button" class="layui-btn layui-btn-xs layui-btn-normal">下载</button>
+							<button type="button" class="layui-btn layui-btn-xs layui-btn-danger">删除</button>
+						</div>
+					</td>
+				  </tr>
+				  <tr>
+					<td>3</td>
+					<td>制度.doc</td>
+					<td>值班制度</td>
+					<td>2020-4-10</td>
+					<td>魏强</td>
+					<td>1</td>
+					<td>
+						<div id="" class="layui-btn-group">
+							<button type="button" class="layui-btn layui-btn-xs">查看</button>
+							<button type="button" class="layui-btn layui-btn-xs layui-btn-warm">修改</button>
+							<button type="button" class="layui-btn layui-btn-xs layui-btn-normal">下载</button>
+							<button type="button" class="layui-btn layui-btn-xs layui-btn-danger">删除</button>
+						</div>
+					</td>
+				  </tr>
+				  <tr>
+					<td>4</td>
+					<td>python.zip</td>
+					<td>学习资源</td>
+					<td>2020-4-10</td>
+					<td>魏强</td>
+					<td>2</td>
+					<td>
+						<div id="" class="layui-btn-group">
+							<button type="button" class="layui-btn layui-btn-xs">查看</button>
+							<button type="button" class="layui-btn layui-btn-xs layui-btn-warm">修改</button>
+							<button type="button" class="layui-btn layui-btn-xs layui-btn-normal">下载</button>
+							<button type="button" class="layui-btn layui-btn-xs layui-btn-danger">删除</button>
+						</div>
+					</td>
+				  </tr>
+				  <tr>
+					<td>5</td>
+					<td>投影仪维修</td>
+					<td>故障排除</td>
+					<td>2020-4-10</td>
+					<td>魏强</td>
+					<td>0</td>
+					<td>
+						<div id="" class="layui-btn-group">
+							<button type="button" class="layui-btn layui-btn-xs">查看</button>
+							<button type="button" class="layui-btn layui-btn-xs layui-btn-warm">修改</button>
+							<button type="button" class="layui-btn layui-btn-xs layui-btn-normal">下载</button>
+							<button type="button" class="layui-btn layui-btn-xs layui-btn-danger">删除</button>
+						</div>
+					</td>
+				  </tr>
+				</tbody>
+			  </table>    
+			</div>
+		  </div>
+		</div>
+	  </div>
+	</div> 
+
+	
+{% endblock %}
+{% block js_content %}
+layui.use(['element', 'layer','upload','layedit', 'laydate','table','form'], function(){
+	 var $ = layui.jquery
+	 ,element = layui.element; //Tab的切换功能，切换事件监听等，需要依赖element模块
+	 var layer = layui.layer;
+	 var upload = layui.upload;
+	 var layedit = layui.layedit;
+	 var laydate = layui.laydate;
+	 var table = layui.table;
+	 var form = layui.form;
+	 form.render("select","select");
+	   laydate.render({
+		 elem: '#start_date'
+		 ,type: 'datetime'
+		 ,theme: '#393D49'
+	   });
+	   laydate.render({
+		 elem: '#end_date'
+		 ,type: 'datetime'
+		 ,theme: '#393D49'
+	   });
+	   //监听折叠
+	   element.on('collapse(test)', function(data){
+		 <!-- layer.msg('展开状态：'+ data.show); -->
+	   });
+	    //多文件列表示例
+	   var demoListView = $('#demoList')
+		   , uploadListIns = upload.render({
+		   elem: '#testList'
+		   , method: 'POST'
+		   , accept: 'file'
+		   , multiple: true
+		   , auto: false
+		   , choose: function (obj) {
+
+			   files = this.files = obj.pushFile(); //将每次选择的文件追加到文件队列
+			   //读取本地文件
+			   obj.preview(function (index, file, result) {
+				   var tr = $(['<tr id="upload-' + index + '">'
+					   , '<td></td>'
+					   , '<td>' + file.name + '</td>'
+					   , '<td>' + (file.size / 1014).toFixed(1) + 'kb</td>'
+					   , '<td>' + $("select[name='resource_type']").val() + '</td>'
+					   , '<td>' + $("select[name='authority']").val() + '</td>'
+					   , '<td>等待上传</td>'
+					   , '<td>'
+					   , '<button class="layui-btn layui-btn-xs demo-reload ">重传</button>'
+					   , '<button class="layui-btn layui-btn-xs layui-btn-danger demo-delete">删除</button>'
+					   , '</td>'
+					   , '</tr>'].join(''));
+
+				   //单个重传
+				   tr.find('.demo-reload').on('click', function () {
+					   obj.upload(index, file);
+				   });
+
+				   //删除
+				   tr.find('.demo-delete').on('click', function () {
+					   delete files[index]; //删除对应的文件
+					   tr.remove();
+					   uploadListIns.config.elem.next()[0].value = ''; //清空 input file 值，以免删除后出现同名文件不可选
+				   });
+
+				   demoListView.append(tr);
+				   var oTable = document.getElementById("demoList");  //设置自增序号
+				   		    for(var i=0;i<oTable.rows.length;i++){
+				   		    oTable.rows[i].cells[0].innerHTML = (i+1);
+							}
+				   getFileNames();//得到文件名
+			   });
+		   }
+		   , done: function (res, index, upload) {
+			   if (res.code == 0) { //上传成功
+				   var tr = demoListView.find('tr#upload-' + index)
+					   , tds = tr.children();
+				   tds.eq(2).html('<span style="color: #5FB878;">上传成功</span>');
+				   tds.eq(3).html(''); //清空操作
+				   return delete this.files[index]; //删除文件队列已经上传成功的文件
+			   }
+			   this.error(index, upload);
+		   }
+		   , error: function (index, upload) {
+			   var tr = demoListView.find('tr#upload-' + index)
+				   , tds = tr.children();
+			   tds.eq(2).html('<span style="color: #FF5722;">上传失败</span>');
+			   tds.eq(3).find('.demo-reload').removeClass('layui-hide'); //显示重传
+		   }
+	   });
+	   function getFileNames() {
+			   var count = 0;
+			   form = new FormData();
+			   // form.append("file", files[0]);
+			   // 将文件列表加入FormData()中
+			   for (let i in files) {
+				   form.append("file" + count, files[i]);
+				   console.log("--------" + i + "---->" + files[i]);
+				   count = count + 1;
+			   }
+			   // 获得上传的文件总数
+			   form.append("files_count", count);
+			   // 获得上传的文件类型
+			   form.append("resource_type", $("select[name='resource_type']").val());
+		
+		
+		   }
+	   upload.render({
+		elem: '#upload'
+		,url: '/admin/import_freetime/' //改成您自己的上传接口
+		,accept: 'file' //普通文件
+		,exts: 'xlsx|xls' //只允许上传excel文件
+		,done: function(res){
+			layer.msg(res.msg);
+			var table_name = res.data.table_name;
+			var table_content = res.data.table_content;
+			console.log(table_content.day1[0]);
+			$("#table_name").val(table_name);
+			for(var i=1;i<6;i++){
+				var data_day = {};
+				for(var j=1;j<7;j++){
+					var day_id = "day"+i;
+					var td_content = table_content[day_id][j-1];
+					$("#"+i+j).html(td_content);
+					console.log("import_freetime td_content---"+td_content);
+				}
+			}
+			console.log("upload  "+JSON.stringify(res));
+		}
+	   });
+	   $("#11,#12,#13,#14,#15,#16,#21,#22,#23,#24,#25,#26,#31,#32,#33,#34,#35,#36,#41,#42,#43,#44,#45,#46,#51,#52,#53,#54,#55,#56").click(function(){
+		   id = this.id;
+		   $("#alert_content").val($("#"+id).html());
+		   layer.open({
+			type:1,
+			area:['600px','300px'],
+			 title: '输入框'
+			 ,content: $("#alert_model"),
+			 shade: 0,
+			 btn: ['提交', '重置']
+			 ,btn1: function(index, layero){
+			 var content=$("#alert_content").val();
+			 console.log(content);
+			 $("#"+id).html(content);
+			 layer.closeAll();
+			 },
+			 btn2: function(index, layero){
+			  $("#alert_content").val("");
+			  return false;
+			 },
+		   cancel: function(layero,index){ 
+			  layer.closeAll();
+			 }
+		   }); 
+		});
+		$("#batch_add_freetime").click(function(){
+			var ft_content = {};
+			var data_week = [];
+			for(var i=1;i<6;i++){
+				var data_day = {};
+				for(var j=1;j<7;j++){
+					var data = $("#"+i+j).html();
+					data_day[""+i+j] = data;
+				}
+				data_week.push(data_day);
+			}
+			if($("#table_name").val() == ""){
+				layer.msg("请输入表名");
+				return false;
+			}
+			ft_content["table_name"] = $("#table_name").val();
+			ft_content["data_week"] = data_week;
+			console.log("batch_add_freetime ft_content---"+JSON.stringify(ft_content));
+			$.ajax({
+				url : "/admin/batch_add_freetime/",    //请求地址
+				type : "POST",
+				'Content-Type':'application/json',    //数据，json字符串
+				headers:{'X-CSRFToken': $('input[name=csrfmiddlewaretoken]').val()},//在请求头通过csrf认证，键固定    
+				data : {
+					ft_content:JSON.stringify(ft_content)
+				},    
+				success : function(res) {    //请求成功
+					layer.msg(JSON.parse(res).msg);
+					var data = JSON.parse(res).data;
+					for(var i=1;i<6;i++){
+						for(var j=1;j<7;j++){
+							var day_data = data[i-1][""+i+j]
+							$("#"+i+j).html(day_data);
+						}
+					}
+					console.log("batch_add_freetime  result----"+data[0]["11"]);
+				},
+				error : function(e){    //请求失败，包含具体的错误信息
+					console.log(e.status);
+					console.log(e.responseText);
+				}
+			});
+		})
+})
+{% endblock %}
+

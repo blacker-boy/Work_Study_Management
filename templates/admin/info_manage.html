@@ -1,0 +1,216 @@
+{% extends "admin/base.html" %}
+{% load static %}
+{% block title %}信息管理{% endblock %}
+{% block content %}
+    <div class="" style="margin-left: 40px;margin-right: 40px;">
+		<div style="padding: 20px; background-color: #F2F2F2;">
+		  <div class="layui-row layui-col-space15">
+			<div class="layui-col-md12">
+			  <div class="layui-card">
+				<div class="layui-card-header">
+					<div class="layui-form">
+						<div class="layui-inline" style="margin-right: 15px;">
+							部门信息
+						</div>
+						<i class="layui-icon" style="float: left;">&#xe602;</i>
+						</div>
+				</div>
+				<div class="layui-card-body" style="margin-top: px;">
+				  <div class="layui-carousel layui-inline" id="test1" lay-filter="test1" style="height: auto;" style="float: left;">
+				    <div carousel-item="">
+				      <div> <img src="{% static "/media/部门1.jpg" %}" style="max-width:100%;height:auto;">条目1</div>
+				      <div> <img src="{% static "/media/部门2.jpg" %}" style="max-width:100%;height:auto;">条目2</div>
+				      <div> <img src="{% static "/media/部门3.jpg" %}" style="max-width:100%;height:auto;">条目3</div>
+				      <div> <img src="{% static "/media/部门4.jpg" %}" style="max-width:100%;height:auto;">条目4</div>
+				      <div> <img src="{% static "/media/部门5.jpg" %}" style="max-width:100%;height:auto;">条目5</div>
+				    </div>
+				  </div> 
+				  <div class="layui-inline" style="margin-left: 20px;width: 50%;height: 350px;">
+					<div class="layui-form">
+					  <div class="layui-form-item">
+					    <label class="layui-form-label">部门名称:</label>
+					    <div class="layui-input-inline">
+					      <input type="text" name="table_name" id="table_name" lay-verify="text" placeholder="部门名称" value="学院机房" autocomplete="off" class="layui-input">
+					    </div>
+					  </div>
+					  <div class="layui-form-item">
+					    <label class="layui-form-label">部门人数:</label>
+					    <div class="layui-input-inline">
+					      <input type="text" name="table_name" id="table_name" lay-verify="text" placeholder="请填写部门人数" value="35" autocomplete="off" class="layui-input">
+					    </div>
+					  </div>
+					  <div class="layui-form-item">
+					    <label class="layui-form-label">指导老师</label>
+					    <div class="layui-input-inline">
+					      <input type="text" name="table_name" id="table_name" lay-verify="text" placeholder="请填写指导老师" value="郝晓枫" autocomplete="off" class="layui-input">
+					    </div>
+					  </div>
+					  <div class="layui-form-item">
+					    <label class="layui-form-label">部门地址</label>
+					    <div class="layui-input-inline">
+					      <input type="text" name="table_name" id="table_name" lay-verify="text" placeholder="请填写部门地址" value="X7506" autocomplete="off" class="layui-input">
+					    </div>
+					  </div>
+					  <div class="layui-form-item">
+					    <label class="layui-form-label">部门职责</label>
+						<div class="layui-input-block">
+					      <div contenteditable="true" type="text"  placeholder="请填写部门职责" autocomplete="off" class="class="layui-textarea">学院机房归属于信息科学与技术学院,勤工助学主要工作是值班和打扫卫生.同时,在值班期间帮助老师解决一些突发情况(比如:实验室断电,投影仪故障等问题).可以锻炼应急反应能力,沟通能力.
+															      <br>信息学院机房用于信息学院本科生教学,在这里值班可以学习到更多的知识,也会认识一群朋友.</div>
+					    </div>
+					  </div>
+					</div>
+				  </div>
+					<div class="layui-form" style="margin-top: 30px;">
+						<div class="layui-inline" style="margin-right: 15px;color: #000000;">
+							部门管理员
+						</div>
+						</div>
+					<hr class="layui-bg-gray" style="margin-bottom: 10px;">
+					<table class="layui-table" lay-even="" lay-skin="line">
+						<colgroup>
+						  <col width="50">
+						  <col width="100">
+						  <col width="100">
+						  <col width="100">
+						  <col width="100">
+						  <col>
+						</colgroup>
+						<thead>
+						  <tr>
+							<th>序号</th>
+							<th>学号</th>
+							<th>姓名</th>
+							<th>职务</th>
+							<th>操作</th>
+						  </tr> 
+						</thead>
+						<tbody>
+						  <tr>
+							<td>1</td>
+							<td>20161125800</td>
+							<td>魏强</td>
+							<td>管理员</td>
+							<td>
+								<div id="" class="layui-btn-group">
+									<button type="button" class="layui-btn ">查看</button>
+									<button type="button" class="layui-btn  layui-btn-warm">修改</button>
+									<button type="button" class="layui-btn  layui-btn-danger">删除</button>
+								</div>
+							</td>
+						  </tr>
+						  <tr>
+							<td>2</td>
+							<td>20161125822</td>
+							<td>哈哈</td>
+							<td>组长</td>
+							<td>
+								<div id="" class="layui-btn-group">
+									<button type="button" class="layui-btn ">查看</button>
+									<button type="button" class="layui-btn  layui-btn-warm">修改</button>
+									<button type="button" class="layui-btn  layui-btn-danger">删除</button>
+								</div>
+							</td>
+						  </tr>
+						</tbody>
+					</table>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		</div> 
+    </div>
+	
+{% endblock %}
+{% block js_content %}
+layui.use(['element', 'layer','upload','layedit', 'laydate','table','carousel'], function(){
+     var $ = layui.jquery
+     ,element = layui.element; //Tab的切换功能，切换事件监听等，需要依赖element模块
+	 var layer = layui.layer;
+	 var upload = layui.upload;
+	 var layedit = layui.layedit;
+	 var laydate = layui.laydate;
+	 var table = layui.table;
+	 var carousel = layui.carousel;
+	 
+	 //常规轮播
+	   carousel.render({
+	     elem: '#test1'
+	     ,arrow: 'always'
+		 ,width: '500px'
+		 ,height: '350px'
+		 ,interval: 5000
+	   });
+	   
+	   //监听折叠
+	   element.on('collapse(test)', function(data){
+	     <!-- layer.msg('展开状态：'+ data.show); -->
+	   });
+	   upload.render({
+	   	elem: '#upload'
+	   	,url: '/admin/import_freetime/' //改成您自己的上传接口
+	   	,accept: 'file' //普通文件
+	   	,exts: 'xlsx|xls' //只允许上传excel文件
+	   	,done: function(res){
+	   	    layer.msg(res.msg);
+			var table_name = res.data.table_name;
+			var table_content = res.data.table_content;
+			console.log(table_content.day1[0]);
+			$("#table_name").val(table_name);
+			for(var i=1;i<6;i++){
+				var data_day = {};
+				for(var j=1;j<7;j++){
+					var day_id = "day"+i;
+					var td_content = table_content[day_id][j-1];
+					$("#"+i+j).html(td_content);
+					console.log("import_freetime td_content---"+td_content);
+				}
+			}
+	   	    console.log("upload  "+JSON.stringify(res));
+	   	}
+	   });
+	   
+		$("#batch_add_freetime").click(function(){
+			var ft_content = {};
+			var data_week = [];
+			for(var i=1;i<6;i++){
+				var data_day = {};
+				for(var j=1;j<7;j++){
+					var data = $("#"+i+j).html();
+					data_day[""+i+j] = data;
+				}
+				data_week.push(data_day);
+			}
+			if($("#table_name").val() == ""){
+				layer.msg("请输入表名");
+				return false;
+			}
+			ft_content["table_name"] = $("#table_name").val();
+			ft_content["data_week"] = data_week;
+			console.log("batch_add_freetime ft_content---"+JSON.stringify(ft_content));
+			$.ajax({
+				url : "/admin/batch_add_freetime/",    //请求地址
+				type : "POST",
+				'Content-Type':'application/json',    //数据，json字符串
+				headers:{'X-CSRFToken': $('input[name=csrfmiddlewaretoken]').val()},//在请求头通过csrf认证，键固定    
+				data : {
+					ft_content:JSON.stringify(ft_content)
+				},    
+				success : function(res) {    //请求成功
+					layer.msg(JSON.parse(res).msg);
+					var data = JSON.parse(res).data;
+					for(var i=1;i<6;i++){
+						for(var j=1;j<7;j++){
+							var day_data = data[i-1][""+i+j]
+							$("#"+i+j).html(day_data);
+						}
+					}
+					console.log("batch_add_freetime  result----"+data[0]["11"]);
+				},
+				error : function(e){    //请求失败，包含具体的错误信息
+					console.log(e.status);
+					console.log(e.responseText);
+				}
+			});
+		})
+})
+{% endblock %}

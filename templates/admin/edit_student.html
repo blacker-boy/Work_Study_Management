@@ -1,0 +1,53 @@
+{% extends "admin/base.html" %}
+{% block title %}编辑学生{% endblock %}
+{% block content %}
+    <div  style="margin-left: 40px;margin-right: 40px;">
+            <div class="layui-row">
+            {%for student in data%}
+                <div class="layui-col-md5">
+                    <form action="/edit_student/" method="post" enctype="multipart/form-data"/>
+    
+                        学生学号：<input type="text" name="user_id" id="user_id" placeholder="学生学号" class="layui-input" value="{{ student.user_id}}" />
+                        <hr class="layui-bg-green">
+    
+                        <input type="text" name="user_name" id="user_name" placeholder="学生姓名" class="layui-input" value="{{ student.user_name}}"/>
+                        <hr class="layui-bg-green">
+    
+                        <input type="text" name="user_specialty" id="user_specialty" placeholder="专业班级" class="layui-input" value="{{ student.user_specialty }}"/>
+                        <hr class="layui-bg-green">
+    
+                        <input type="text" name="phone_id" id="phone_id" placeholder="手机号码" class="layui-input" value="{{ student.user_phone.phone_id }}"/>
+                        <hr class="layui-bg-green">
+						
+						<input type="text" name="user_password" id="user_password" placeholder="登陆密码" class="layui-input" value="{{ student.user_phone.user_password }}"/>
+						<hr class="layui-bg-green">
+						
+						<input type="text" name="user_qq" id="user_qq" placeholder="QQ号" class="layui-input" value="{{ student.user_qq }}"/>
+						<hr class="layui-bg-green">
+						
+						<input type="text" name="user_organization" id="user_organization" placeholder="任职组织" class="layui-input" value="{{ student.user_organization }}"/>
+						<hr class="layui-bg-green">
+						
+						<input type="text" name="department" id="department" placeholder="部门" class="layui-input" value="{{ student.department.de_name }}"/>
+						<hr class="layui-bg-green">
+						{% if student.user_phone.user_level == 1 %}
+						    <input type="text" name="user_level" id="user_level" placeholder="职务" class="layui-input" value="学院管理员"/>
+						    {% elif student.user_phone.user_level == 2 %}
+						    <input type="text" name="user_level" id="user_level" placeholder="职务" class="layui-input" value="管理员"/>
+						    {% elif student.user_phone.user_level == 3 %}
+						    <input type="text" name="user_level" id="user_level" placeholder="职务" class="layui-input" value="组长"/>
+						    {% elif student.user_phone.user_level == 4 %}
+						    <input type="text" name="user_level" id="user_level" placeholder="职务" class="layui-input" value="成员"/>
+						{% endif %}
+						<hr class="layui-bg-green">
+						
+						<input type="text" name="user_instructor" id="user_instructor" placeholder="辅导员" class="layui-input" value="{{ student.user_instructor }}"/>
+						<hr class="layui-bg-green">
+    
+                        <input type="submit" value="添加" class="layui-btn"/>
+                    </form>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+{% endblock %}

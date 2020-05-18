@@ -1,0 +1,297 @@
+{% extends "admin/base.html" %}
+{% block title %}公告管理{% endblock %}
+{% block content %}
+    <div class="" style="margin-left: 40px;margin-right: 40px;">
+		<fieldset class="layui-elem-field layui-field-title" style="margin-top: 10px;">
+		  <legend>公告管理</legend>
+		</fieldset>
+		<div class="layui-collapse" lay-filter="test">
+		  <div class="layui-colla-item">
+		    <h2 class="layui-colla-title">新建公告</h2>
+		    <div class="layui-colla-content">
+		     <div style=" background-color: white;">
+				 <div class="layui-form">
+				 <div class="layui-form-item" style="margin-top: 10px; margin-right: 20px;">
+				 						  
+				   <label class="layui-form-label">名称：</label>
+				   <div class="layui-input-inline">
+				     <input type="text" name="table_name" id="table_name" lay-verify="text" placeholder="请填写公告名称" autocomplete="off" class="layui-input">
+				   </div>
+				   <div class="layui-input-inline">
+				   					   <input type="checkbox" name="like1[write]" lay-skin="primary" title="置顶" checked="">
+				   </div>
+				 </div>
+				 <div class="layui-form-item" style="margin-top: 10px; margin-right: 20px;">
+				 						  
+				   <label class="layui-form-label">主题：</label>
+				   <div class="layui-input-inline" style="width: 70%;">
+				     <input type="text" name="table_name" id="table_name" lay-verify="text" placeholder="请填写主题" autocomplete="off" class="layui-input">
+				   </div>
+				   
+				 </div>
+				 </div>
+			   <div style="width: 90%;margin: 15px auto;">
+				   <textarea name="" id="edit">这里是<span style="color: #e03e2d;"><em>初始化</em></span>的内容</textarea>
+				   <hr />
+				   <div class="layui-form" style="margin-top: 10px">
+					   <div class="layui-btn" id="upload"><i class="layui-icon"></i>上传附件</div>
+					   <div class="layui-inline" style="color: firebrick;margin-left: 20px;">若有附件，请上传</div>
+					   <div class="layui-btn-group" style="float: right;">
+						   <div class="layui-btn">保存</div>
+						   <div class="layui-btn layui-btn-normal">发布</div>
+					   </div>
+				   </div>
+				   
+			   </div>
+			 </div>
+		   </div>
+		 </div>
+		 </div>
+
+				
+		        
+		<!-- <button id="div">提交</button> -->
+		<div style="padding: 20px; background-color: #F2F2F2;margin-top: 30px;">
+		  <div class="layui-row layui-col-space15">
+		    <div class="layui-col-md12">
+		      <div class="layui-card">
+		        <div class="layui-card-header">
+				<div class="layui-form">
+					<div class="layui-inline" style="margin-right: 15px;">
+						公告列表
+					</div>
+					
+					<i class="layui-icon" style="float: left;">&#xe602;</i>
+					</div>
+		        </div>
+		        <div class="layui-card-body" style="margin-top: px;">
+					<div class="layui-inline" style="margin-right: 40px;">
+					      <label class="layui-form-label">日期范围</label>
+					      <div class="layui-input-inline">
+					        <input type="text" class="layui-input" id="date_range" placeholder=" - ">
+					      </div>
+					  </div>
+					<button type="button" class="layui-btn layui-btn-xs">已发布</button>
+					<button type="button" class="layui-btn layui-btn-danger layui-btn-xs">未发布</button>
+		          <table class="layui-table" lay-even="" lay-skin="line">
+		            <colgroup>
+		              <col width="20">
+					  <col width="100">
+					  <col width="150">
+					  <col width="100">
+					  <col width="50">
+					  <col width="50">
+					  <col width="150">
+		              <col>
+		            </colgroup>
+		            <thead>
+		              <tr>
+		                <th>序号</th>
+		                <th>名称</th>
+		                <th>主题</th>
+						<th>发布时间</th>
+						<th>作者</th>
+						<th>浏览量</th>
+		                <th>操作</th>
+		              </tr> 
+		            </thead>
+		            <tbody>
+		              <tr>
+		                <td>1</td>
+		                <td>第一个公告</td>
+		                <td>这是第一个公告主题</td>
+						<td>2020-4-10</td>
+						<td>魏强</td>
+						<td>0</td>
+		                <td>
+							<div id="" class="layui-btn-group">
+								<button type="button" class="layui-btn">查看</button>
+								<button type="button" class="layui-btn layui-btn-normal">修改</button>
+								<button type="button" class="layui-btn layui-btn-warm">删除</button>
+							</div>
+						</td>
+		              </tr>
+		              <tr>
+		                <td>2</td>
+		                <td>第二个公告</td>
+		                <td>这是第二个公告主题</td>
+		                <td>2020-4-10</td>
+		                <td>魏强</td>
+		                <td>0</td>
+		                <td>
+		                	<div id="" class="layui-btn-group">
+		                		<button type="button" class="layui-btn">查看</button>
+		                		<button type="button" class="layui-btn layui-btn-normal">修改</button>
+		                		<button type="button" class="layui-btn layui-btn-warm">删除</button>
+		                	</div>
+		                </td>
+		              </tr>
+		              <tr>
+		                <td>3</td>
+		                <td>首次公告</td>
+		                <td>关于勤工俭学办法的实行</td>
+		                <td>2020-4-10</td>
+		                <td>魏强</td>
+		                <td>1</td>
+		                <td>
+		                	<div id="" class="layui-btn-group">
+		                		<button type="button" class="layui-btn">查看</button>
+		                		<button type="button" class="layui-btn layui-btn-normal">修改</button>
+		                		<button type="button" class="layui-btn layui-btn-warm">删除</button>
+		                	</div>
+		                </td>
+		              </tr> 
+		            </tbody>
+		          </table>    
+		        </div>
+		      </div>
+		    </div>
+		  </div>
+		</div> 
+    </div>
+	
+{% endblock %}
+{% block js_content %}
+layui.use(['element', 'layer','upload','layedit', 'laydate','table','form'], function(){
+     var $ = layui.jquery
+     ,element = layui.element; //Tab的切换功能，切换事件监听等，需要依赖element模块
+	 var layer = layui.layer;
+	 var upload = layui.upload;
+	 var layedit = layui.layedit;
+	 var laydate = layui.laydate;
+	 var table = layui.table;
+	 var form = layui.form;
+	 form.render("select","select");
+	   laydate.render({
+	   		 elem: '#date_range'
+	   		 ,type: 'datetime'
+	   			 ,range: true
+	   		 ,theme: '#393D49'
+	   });
+	   //监听折叠
+	   element.on('collapse(test)', function(data){
+	     <!-- layer.msg('展开状态：'+ data.show); -->
+	   });
+	   upload.render({
+	   	elem: '#upload'
+	   	,url: '/admin/import_freetime/' //改成您自己的上传接口
+	   	,accept: 'file' //普通文件
+	   	,exts: 'xlsx|xls' //只允许上传excel文件
+	   	,done: function(res){
+	   	    layer.msg(res.msg);
+			var table_name = res.data.table_name;
+			var table_content = res.data.table_content;
+			console.log(table_content.day1[0]);
+			$("#table_name").val(table_name);
+			for(var i=1;i<6;i++){
+				var data_day = {};
+				for(var j=1;j<7;j++){
+					var day_id = "day"+i;
+					var td_content = table_content[day_id][j-1];
+					$("#"+i+j).html(td_content);
+					console.log("import_freetime td_content---"+td_content);
+				}
+			}
+	   	    console.log("upload  "+JSON.stringify(res));
+	   	}
+	   });
+	   
+		$("#batch_add_freetime").click(function(){
+			var ft_content = {};
+			var data_week = [];
+			for(var i=1;i<6;i++){
+				var data_day = {};
+				for(var j=1;j<7;j++){
+					var data = $("#"+i+j).html();
+					data_day[""+i+j] = data;
+				}
+				data_week.push(data_day);
+			}
+			if($("#table_name").val() == ""){
+				layer.msg("请输入表名");
+				return false;
+			}
+			ft_content["table_name"] = $("#table_name").val();
+			ft_content["data_week"] = data_week;
+			console.log("batch_add_freetime ft_content---"+JSON.stringify(ft_content));
+			$.ajax({
+				url : "/admin/batch_add_freetime/",    //请求地址
+				type : "POST",
+				'Content-Type':'application/json',    //数据，json字符串
+				headers:{'X-CSRFToken': $('input[name=csrfmiddlewaretoken]').val()},//在请求头通过csrf认证，键固定    
+				data : {
+					ft_content:JSON.stringify(ft_content)
+				},    
+				success : function(res) {    //请求成功
+					layer.msg(JSON.parse(res).msg);
+					var data = JSON.parse(res).data;
+					for(var i=1;i<6;i++){
+						for(var j=1;j<7;j++){
+							var day_data = data[i-1][""+i+j]
+							$("#"+i+j).html(day_data);
+						}
+					}
+					console.log("batch_add_freetime  result----"+data[0]["11"]);
+				},
+				error : function(e){    //请求失败，包含具体的错误信息
+					console.log(e.status);
+					console.log(e.responseText);
+				}
+			});
+		})
+})
+{% load static %}
+layui.extend({
+	tinymce: '../../static/layui_exts/tinymce/tinymce'
+}).use(['tinymce', 'util', 'layer'], function () {
+	var tinymce = layui.tinymce
+
+	var util = layui.util;
+
+	var edit = tinymce.render({
+		elem: "#edit"
+		,height: 400
+		// ...
+		// 其余配置可参考官方文档
+	},(opt)=>{
+		//加载完成后回调
+	});
+	util.event('lay-event', {
+		getContent:() => {
+			var content = tinymce.get('#edit').getContent()
+			layer.alert(content)
+		},
+		setContent:() => {
+			tinymce.get('#edit').setContent('点击按钮设置的内容：<span style="color: #e03e2d;">' + new Date()+'</span>')
+		},
+		clearContent:() => {
+			tinymce.get('#edit').setContent('')
+		},
+		insertContent:() => {
+			tinymce.get('#edit').insertContent('<b>插入内容</b>')
+		},
+		getText:() => {
+			var text = tinymce.get('#edit').getContent({format:'text'})
+			layer.alert(text)
+		},
+		reload:() => {
+			tinymce.reload({
+				elem:'#edit'
+				// 所有参数都可以重新设置 ...
+			},(opt) => {
+				//重载完成后回调函数，会把所有参数回传，
+				//重载仅仅重新渲染编辑器，不会清空textarea，可手动清空或设置
+				tinymce.get('#edit').setContent('')
+			})
+		},
+		destroy:()=>{
+			tinymce.get('#edit').destroy()
+		},
+		render:()=>{
+			tinymce.render({elem:'#edit',height:'500px'})
+		}
+	});
+
+
+});
+{% endblock %}
